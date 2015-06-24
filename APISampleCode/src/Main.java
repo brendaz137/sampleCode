@@ -6,6 +6,8 @@ import java.net.URL;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
+
 public class Main {
     public static void main(String[] args){
 		// URL to call
@@ -32,15 +34,15 @@ public class Main {
 	           
 	           try {
 	        	   jsonObject = new JSONObject(response.toString());
-	        	   System.out.println(jsonObject);
-	        	   System.out.println(jsonObject.getJSONObject("data").getString("building"));
+	        	   System.out.println("JSON Object" + jsonObject);
+	        	   System.out.println("JSON Object --> building" + jsonObject.getJSONObject("data").getString("building"));
 	           } catch (JSONException e){
-	          	   System.out.println(e.toString());
+	          	   System.out.println("a JSON Exception occured" + e.toString());
 	           }
 	           //this ends the first url
 	           
 	           
-	           
+	           /*
 	           //this begins the second url
 	           url = new URL(urlStringAll);
 	           urlConnection = (HttpURLConnection) url.openConnection();
@@ -61,12 +63,11 @@ public class Main {
 	          	   System.out.println(e.toString());
 	           }
 	           //this ends the second url
-	           
+	           */
 	           
            
            } catch (Exception e) {
-           // if any I/O error occurs
-           System.out.println(e.toString());
+           System.out.println("I/O error occured" + e.toString());
        }    
       
 	}
