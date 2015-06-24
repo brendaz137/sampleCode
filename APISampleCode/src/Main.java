@@ -31,8 +31,9 @@ public class Main {
            
            try {
         	   jsonObject = new JSONObject(response.toString());
-        	   System.out.println(jsonObject);
+        	   //System.out.println(jsonObject);
         	   //System.out.println(jsonObject.getString("data"));
+        	   System.out.println(jsonObject.getJSONObject("data"));
         	   } 
            catch (JSONException e){
           	   System.out.println(e.toString());
