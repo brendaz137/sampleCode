@@ -18,7 +18,7 @@ public class Main {
        
          
        try {   //this begins the first url
-	    	   URL url = new URL(urlString);
+	    	   URL url = new URL(urlStringAll);
 	           urlConnection = (HttpURLConnection) url.openConnection();
 	           
 	           BufferedReader in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
@@ -33,7 +33,7 @@ public class Main {
 	           try {
 	        	   jsonObject = new JSONObject(response.toString());
 	        	   System.out.println(jsonObject);
-	        	   System.out.println(jsonObject.getJSONObject("data").getString("building"));
+	        	   //System.out.println(jsonObject.getJSONObject("data").getString("building"));
 	           } catch (JSONException e){
 	          	   System.out.println(e.toString());
 	           }
@@ -41,8 +41,9 @@ public class Main {
 	           
 	           
 	           
+	           
 	           //this begins the second url
-	           url = new URL(urlStringAll);
+	           url = new URL(urlString);
 	           urlConnection = (HttpURLConnection) url.openConnection();
 	           
 	           in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
@@ -56,7 +57,7 @@ public class Main {
 	           try {
 	        	   jsonObject = new JSONObject(responseAll.toString());
 	        	   System.out.println(jsonObject);
-	        	   //System.out.println(jsonObject.getJSONObject("data").getString("building"));
+	        	   System.out.println(jsonObject.getJSONObject("data").getString("building"));
 	           } catch (JSONException e){
 	          	   System.out.println(e.toString());
 	           }
