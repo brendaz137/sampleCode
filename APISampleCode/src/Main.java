@@ -26,7 +26,7 @@ public class Main {
 	           
 	           BufferedReader in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
 	           String inputLine;
-	           
+	            
 	           while ((inputLine = in.readLine()) != null) {
 	        	   responseAll.append(inputLine);
 	           }
@@ -62,8 +62,8 @@ public class Main {
 	           
 	           try {
 	        	   jsonObject = new JSONObject(response.toString());
-	        	   //System.out.println("JSON Object" + jsonObject);
-	        	   //System.out.println("JSON Object --> building" + jsonObject.getJSONObject("data").getString("building"));
+	        	   System.out.println("JSON Object" + jsonObject);
+	        	   System.out.println("JSON Object --> building" + jsonObject.getJSONObject("data").getString("building"));
 	           } catch (JSONException e){
 	          	   System.out.println(e.toString());
 	           }
