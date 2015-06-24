@@ -6,16 +6,10 @@ import java.net.URL;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-//this is a comment
-//this is a second comment
-//this is Bo commenting
-//this is a fourth comment
-
 public class Main {
     public static void main(String[] args){
 		// URL to call
-
-    	String urlString = "http://mit-public-dev.cloudhub.io/classrooms/v1/classrooms"; 
+    	String urlString = "http://mit-public-dev.cloudhub.io/classrooms/v1/classrooms/1-115"; 
     	HttpURLConnection urlConnection;
     	StringBuffer response = new StringBuffer();
     	JSONObject jsonObject;
@@ -36,9 +30,8 @@ public class Main {
            
            try {
         	   jsonObject = new JSONObject(response.toString());
-        	   //System.out.println(jsonObject);
-        	   //System.out.println(jsonObject.getString("data"));
-        	   System.out.println(jsonObject.getJSONObject("data"));
+        	   System.out.println(jsonObject);
+        	   System.out.println(jsonObject.getJSONObject("data").getString("building"));
         	   } 
            catch (JSONException e){
           	   System.out.println(e.toString());
@@ -49,5 +42,6 @@ public class Main {
            // if any I/O error occurs
            System.out.println(e.toString());
        }    
+      
 	}
 }
