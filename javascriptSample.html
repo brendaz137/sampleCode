@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
+<body>
+<script type="text/javascript">
+
+
+//here is our code working with the open weather maps api
+$.ajax({
+	type: "GET",
+	dataType: "jsonp",
+	url: "http://api.openweathermap.org/data/2.5/weather?q=London,uk",
+	success: function(data) {
+		console.log("print");
+		console.log(data);
+	}
+})
+
+//here is our code not working with the classrooms api
+$.ajax({
+	type: "GET",
+	dataType: "jsonp",
+	url: "http://mit-public-dev.cloudhub.io/classrooms/v1/classrooms/1-115",
+	success: function(data) {
+		console.log("print");
+		console.log(data);
+	}
+})
+
+</script>
+</body>
+</html>
