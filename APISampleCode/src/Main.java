@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args){
 		// URL to call
 
-    	String urlStrin = "http://mit-public-dev.cloudhub.io/classrooms/v1/classrooms"; 
+    	String urlString = "http://mit-public-dev.cloudhub.io/classrooms/v1/classrooms"; 
     	HttpURLConnection urlConnection;
     	StringBuffer response = new StringBuffer();
     	JSONObject jsonObject;
@@ -23,7 +23,7 @@ public class Main {
          
        try {
 
-    	   URL url = new URL(urlStrin);
+    	   URL url = new URL(urlString);
            urlConnection = (HttpURLConnection) url.openConnection();
            
            BufferedReader in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
