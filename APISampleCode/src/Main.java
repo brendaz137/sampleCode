@@ -22,7 +22,6 @@ public class Main {
        
          
        try {
-
     	   URL url = new URL(urlString);
            urlConnection = (HttpURLConnection) url.openConnection();
            
