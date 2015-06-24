@@ -7,6 +7,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 //this is a comment
+//this is a second comment
 
 public class Main {
     public static void main(String[] args){
