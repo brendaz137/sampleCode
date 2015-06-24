@@ -9,20 +9,19 @@ import org.json.JSONObject;
 //this is a comment
 //this is a second comment
 //this is Bo commenting
-
 //this is a fourth comment
 
 public class Main {
     public static void main(String[] args){
 		// URL to call
-    	String urlString = "http://mit-public-dev.cloudhub.io/classrooms/v1/classrooms"; 
+    	String urlStringg = "http://mit-public-dev.cloudhub.io/classrooms/v1/classrooms"; 
     	HttpURLConnection urlConnection;
     	StringBuffer response = new StringBuffer();
     	JSONObject jsonObject;
        
          
        try {
-    	   URL url = new URL(urlString);
+    	   URL url = new URL(urlStringg);
            urlConnection = (HttpURLConnection) url.openConnection();
            
            BufferedReader in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
