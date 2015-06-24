@@ -5,6 +5,7 @@ import java.net.URL;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONArray;
 
 
 
@@ -34,7 +35,10 @@ public class Main {
 	           
 	           try {
 	        	   jsonObject = new JSONObject(responseAll.toString());
-	        	   System.out.println("JSON Object" + jsonObject);
+	        	   
+	        	   for(int i = 0; i < 5; i++) {
+	        		   System.out.println(jsonObject.getJSONArray("data").getJSONObject(i));
+	        		}
 
 	           } catch (JSONException e){
 	          	   System.out.println("a JSON Exception occured" + e.toString());
@@ -58,8 +62,8 @@ public class Main {
 	           
 	           try {
 	        	   jsonObject = new JSONObject(response.toString());
-	        	   System.out.println("JSON Object" + jsonObject);
-	        	   System.out.println("JSON Object --> building" + jsonObject.getJSONObject("data").getString("building"));
+	        	   //System.out.println("JSON Object" + jsonObject);
+	        	   //System.out.println("JSON Object --> building" + jsonObject.getJSONObject("data").getString("building"));
 	           } catch (JSONException e){
 	          	   System.out.println(e.toString());
 	           }
