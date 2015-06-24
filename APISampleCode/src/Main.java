@@ -25,7 +25,7 @@ public class Main {
 	           
 	           BufferedReader in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
 	           String inputLine;
-	           
+	            
 	           while ((inputLine = in.readLine()) != null) {
 	        	   responseAll.append(inputLine);
 	           }
