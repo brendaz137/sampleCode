@@ -20,11 +20,35 @@ public class Main {
        
          
        try {   //this begins the first url
-	    	   URL url = new URL(urlString);
+	    	   URL url = new URL(urlStringAll);
 	           urlConnection = (HttpURLConnection) url.openConnection();
 	           
 	           BufferedReader in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
 	           String inputLine;
+	           
+	           while ((inputLine = in.readLine()) != null) {
+	        	   responseAll.append(inputLine);
+	           }
+	           
+	           in.close();
+	           
+	           try {
+	        	   jsonObject = new JSONObject(responseAll.toString());
+	        	   System.out.println("JSON Object" + jsonObject);
+
+	           } catch (JSONException e){
+	          	   System.out.println("a JSON Exception occured" + e.toString());
+	           }
+	           //this ends the first url
+	           
+	           
+	           
+	           
+	           //this begins the second url
+	           url = new URL(urlString);
+	           urlConnection = (HttpURLConnection) url.openConnection();
+	           
+	           in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
 	           
 	           while ((inputLine = in.readLine()) != null) {
 	        	   response.append(inputLine);
@@ -37,33 +61,9 @@ public class Main {
 	        	   System.out.println("JSON Object" + jsonObject);
 	        	   System.out.println("JSON Object --> building" + jsonObject.getJSONObject("data").getString("building"));
 	           } catch (JSONException e){
-	          	   System.out.println("a JSON Exception occured" + e.toString());
-	           }
-	           //this ends the first url
-	           
-	           
-	           /*
-	           //this begins the second url
-	           url = new URL(urlStringAll);
-	           urlConnection = (HttpURLConnection) url.openConnection();
-	           
-	           in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-	           
-	           while ((inputLine = in.readLine()) != null) {
-	        	   responseAll.append(inputLine);
-	           }
-	           
-	           in.close();
-	           
-	           try {
-	        	   jsonObject = new JSONObject(responseAll.toString());
-	        	   System.out.println(jsonObject);
-	        	   //System.out.println(jsonObject.getJSONObject("data").getString("building"));
-	           } catch (JSONException e){
 	          	   System.out.println(e.toString());
 	           }
 	           //this ends the second url
-	           */
 	           
            
            } catch (Exception e) {
