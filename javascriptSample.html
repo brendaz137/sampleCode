@@ -41,7 +41,7 @@ $.ajax({
 	dataType: "jsonp",
 	url: "https://aqueous-lake-7169.herokuapp.com/classrooms/1-115",
 	success: function(output) {
-		document.getElementById("demo2").innerHTML = output;
+		document.getElementById("demo2").innerHTML = output.data;
         document.getElementById("demo3").innerHTML = output.data.capacity;
         document.getElementById("demo4").innerHTML = output.data.urls[0];
 	}
