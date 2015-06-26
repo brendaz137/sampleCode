@@ -5,30 +5,48 @@
 </head>
 
 <body>
+
+<font color=red> FOR ALL CLASSROOMS: </font><br>
+<font color=red> Display information for first 5 classrooms: </font><br>
+<p id= "demo1"></p>
+
+
+<font color=red> FOR AN INDIVIDUAL CLASSROOM: </font><br>
+<font color=red> Display JSON Object containing data for classroom 1-115: </font><br>
+<p id= "demo2"></p>
+
+<font color=red> Display capacity value of JSON Object (classroom 1-115): </font><br>
+<p id= "demo3"></p>
+
+<font color=red> Display url of first picture of JSON Object (classroom 1-115) </font><br>
+<p id= "demo4"></p>
+
+
 <script type="text/javascript">
 
 
-//here is our code working with the open weather maps api
+
 $.ajax({
 	type: "GET",
 	dataType: "jsonp",
-	url: "http://api.openweathermap.org/data/2.5/weather?q=London,uk",
-	success: function(data) {
-		console.log("print");
-		console.log(data);
+	url: "https://aqueous-lake-7169.herokuapp.com/classrooms",
+	success: function(output) {
+        //document.getElementById("demo1").innerHTML = output.data;
 	}
 })
 
-//here is our code not working with the classrooms api
+
 $.ajax({
 	type: "GET",
 	dataType: "jsonp",
-	url: "http://mit-public-dev.cloudhub.io/classrooms/v1/classrooms/1-115",
-	success: function(data) {
-		console.log("print");
-		console.log(data);
+	url: "https://aqueous-lake-7169.herokuapp.com/classrooms/1-115",
+	success: function(output) {
+		document.getElementById("demo2").innerHTML = output;
+        document.getElementById("demo3").innerHTML = output.data.capacity;
+        document.getElementById("demo4").innerHTML = output.data.urls[0];
 	}
 })
+
 
 </script>
 </body>
