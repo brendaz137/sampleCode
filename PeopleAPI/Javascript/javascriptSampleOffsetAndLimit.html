@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Javascript Example</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+<body>
+	<h3> FIRST 10 RECORDS WITH OFFSET OF 1: </h3>
+	<p id='first_ten_records'><p>
+	<script type="text/javascript">
+
+		/*
+			API SAMPLE CODE
+
+			API URL: http://mit-public-dev.cloudhub.io/people/v2/people?offset=1&limit=10
+
+			Function: retrieve first 10 records (by alphabetical order) with an offset of 1
+		*/
+
+		//perform GET request to API server
+		$.ajax({
+			type: "GET",
+			dataType: "jsonp",
+			url: "https://aqueous-lake-7169.herokuapp.com/people?offset=1&limit=10",
+			success: function(data) {
+
+				//create variable for JSON response
+				var responseObject = data;
+
+				//retrieve records from JSON response
+				var records = responseObject['items'];
+
+				//convert records (JSON object) to string for output / printing
+				var records_as_string = JSON.stringify(records);
+
+				//insert string representation of records object into paragraph using jQuery
+				$("#first_ten_records").html(records_as_string);
+			}
+		});
+	</script>
+	
+</body>
+</html>
