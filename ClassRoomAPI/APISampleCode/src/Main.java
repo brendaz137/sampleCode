@@ -36,6 +36,8 @@ public class Main {
 	           try {
 	        	   jsonObject = new JSONObject(responseAll.toString());
 	        	   
+	        	   System.out.println("FOR ALL CLASSROOMS:");
+	        	   System.out.println("Display information for first 5 classrooms in JSON format: ");
 	        	   for(int i = 0; i < 5; i++) {
 	        		   System.out.println(jsonObject.getJSONArray("data").getJSONObject(i));
 	        		}
@@ -62,8 +64,14 @@ public class Main {
 	           
 	           try {
 	        	   jsonObject = new JSONObject(response.toString());
+	        	   System.out.println("FOR AN INDIVIDUAL CLASSROOM:");
+	        	   System.out.println("Display JSON Object containing data for classroom 1-115:");
 	        	   System.out.println("JSON Object" + jsonObject);
-	        	   System.out.println("JSON Object --> building" + jsonObject.getJSONObject("data").getString("building"));
+	        	   System.out.println("Display capacity value of JSON Object (classroom 1-115):");
+	        	   //System.out.println("JSON Object --> building" + jsonObject.getJSONObject("data").getString("building"));
+	        	   System.out.println(jsonObject.getJSONObject("data").getString("capacity"));
+	        	   System.out.println("Display url of first picture of JSON Object:");
+	        	   System.out.println(jsonObject.getJSONObject("data").getJSONArray("urls").getString(0));
 	           } catch (JSONException e){
 	          	   System.out.println(e.toString());
 	           }
