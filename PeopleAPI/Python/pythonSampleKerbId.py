@@ -17,7 +17,10 @@ import json
 responseObject = urllib2.urlopen("http://mit-public-dev.cloudhub.io/people/v1/people/kkatongo").read()
 
 #parse json response string into JSON object
-record = json.loads(responseObject)['item']
+jsonObject = json.loads(responseObject);
+
+#retrieve record from JSON object
+record = jsonObject['item'];
 
 print
 print

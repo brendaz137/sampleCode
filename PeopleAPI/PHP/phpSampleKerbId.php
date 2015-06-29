@@ -18,6 +18,6 @@
 
 	print "<h3> RECORD FOR {KERBID}: </h3>";
 
-	//parse JSON OJBECT back into String for printing
+	//parse JSON OJBECT back into String for printing and print
 	print json_encode($record);
 ?>
