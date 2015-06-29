@@ -13,21 +13,66 @@ import json
 
 '''
 
-#peform get request and store json response (String)
-responseObject = urllib2.urlopen("http://mit-public-dev.cloudhub.io/people/v1/people/kkatongo").read()
+########################################################################################
+
+
+'''
+
+	API CALL WITH VALID KERBID
+
+'''
+
+#peform get request and store response
+response = urllib2.urlopen("http://mit-public-dev.cloudhub.io/people/v1/people/kkatongo")
+
+#get response code
+responseCode = response.getcode()
+
+#retrieve json (String) from response
+jsonResponseString = response.read()
+
 
 #parse json response string into JSON object
-jsonObject = json.loads(responseObject);
+jsonObject = json.loads(jsonResponseString)
 
 #retrieve record from JSON object
-record = jsonObject['item'];
+record = jsonObject['item']
 
 print
 print
-print "RECORD FOR {KERBID}:"
+print "RESPONSE CODE: " + str(responseCode)
 print
-print
-print record
+print "RECORD FOR {KERBID}: " + str(record) 
 print
 print
 
+
+'''
+
+	API CALL WITH INVALID KERBID
+
+'''
+
+# try to peform get request and store response
+try: 
+	response = urllib2.urlopen("http://mit-public-dev.cloudhub.io/people/v1/people/puzzleduck")
+
+#catch HTTPError	
+except urllib2.HTTPError as errorResponse:
+
+	#get response code
+	responseCode = errorResponse.getcode()
+
+	#retrieve json (String) from response
+	jsonResponseString = errorResponse.read()
+
+	#parse json response string into JSON object
+	jsonObject = json.loads(jsonResponseString)
+
+	print
+	print
+	print "RESPONSE CODE: " + str(responseCode)
+	print
+	print "RESPONSE: " + str(jsonObject)
+	print
+	print

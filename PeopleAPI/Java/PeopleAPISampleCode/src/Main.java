@@ -70,10 +70,10 @@ public class Main {
 	        	   System.out.println(record);
 	        	   System.out.println();
 	           } catch (JSONException e){
-	          	   System.out.println("a JSON Exception occured" + e.toString());
+	          	   System.out.println(e.toString());
 	           }
 	           
-	           //convert URL string into URL object
+	           // convert URL string into URL object
 	    	   url = new URL(urlStringOffsetAndLimit);
 	    	   
 	    	   // perform GET request to the URL

@@ -19,7 +19,7 @@
 
 	print "<h3>FIRST 10 RECORDS WITH OFFSET OF 1:</h3>";
 
-	//parse JSON OJBECT back into String for printing and print
+	//parse JSON object into String for printing and print
 	print json_encode($records);
 
 ?>
