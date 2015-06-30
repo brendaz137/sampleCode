@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Sample Code -- One Classroom</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+
+<!--
+	API SAMPLE CODE JAVASCIRPT
+	API URL: http://mit-public-dev.cloudhub.io/classrooms/v1/classrooms/{classroomNumber}
+	Function: retrieve information for an individual classroom {classroomNumber} of the form x-xxx
+	Libraries: jQuery (http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js)
+-->
+
+
+<!--display aquired information-->
+<h4>"Capacity:"</h3>
+<p id="cap"></p>
+<h4>"URL of first picture:"</h3> 
+<p id="url"></p>
+
+<script type="text/javascript">
+
+$.ajax({
+	type: "GET",
+	dataType: "jsonp",
+	url: "https://aqueous-lake-7169.herokuapp.com/classrooms/1-115",
+	success: function(output) {
+		//create variable to store capacity of classroom 1-115
+        var capacity = output.data.capacity;
+        //create variable to store url of first image of classroom 1-115
+        var firstURL = output.data.urls[0];
+        //link variables to html using jquery
+        $("#cap").html(capacity);
+        $("#url").html(firstURL);
+	}
+})
+
+</script>
+
+</body>
+</html>
