@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Javascript Example</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+<body>
+	<h3> RECORD FOR {KERBID}: </h3>
+	<p id='record_for_kerbid'><p>
+	<script type="text/javascript">
+
+		/*	
+			API SAMPLE CODE
+
+			URL: http://mit-public-dev.cloudhub.io/people/v1/people/{kerbid}
+			Function: retrieve record for {kerbid}
+
+		*/
+
+		//perform GET request to API server
+		$.ajax({
+			type: "GET",
+			dataType: "jsonp",
+			url: "https://aqueous-lake-7169.herokuapp.com/people/kkatongo",
+			success: function(data, textStatus, xhr) {
+
+				//create variable for JSON response
+				var responseObject = data;
+
+				//retrieve record from JSON response
+				var record = responseObject['item'];
+
+				//convert record (JSON object) to string for output / printing
+				var record_as_string = JSON.stringify(record);
+
+				//insert string representation of record object into paragraph using jQuery
+				$("#record_for_kerbid").html(record_as_string);
+			}
+		});
+	</script>
+	
+</body>
+</html>
