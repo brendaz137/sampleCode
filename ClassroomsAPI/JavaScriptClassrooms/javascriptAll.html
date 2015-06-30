@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Sample Code -- All Classrooms</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</head>
+<body>
+
+<!--
+
+	API SAMPLE CODE JAVASCIRPT
+	API URL: http://mit-public-dev.cloudhub.io/classrooms/v1/classrooms
+	Function: retrieve information for all MIT classrooms 
+
+-->
+
+<!--display aquired information-->
+<h4>"Capacity:"</h3>
+<p id="1"></p>
+<p id="2"></p>
+<p id="3"></p>
+<p id="4"></p>
+<p id="5"></p>
+
+<script type="text/javascript">
+
+$.ajax({
+	type: "GET",
+	dataType: "jsonp",
+	url: "https://aqueous-lake-7169.herokuapp.com/classrooms",
+	success: function(output) {
+		// store data for first 5 classrooms from response of get request
+        var class1 = JSON.stringify(output.data[0]);
+        var class2 = JSON.stringify(output.data[1]);
+        var class3 = JSON.stringify(output.data[2]);
+        var class4 = JSON.stringify(output.data[3]);
+        var class5 = JSON.stringify(output.data[4]);
+        //link variables to html using jquery
+        $("#1").html(class1);
+        $("#2").html(class2);
+        $("#3").html(class3);
+        $("#4").html(class4);
+        $("#5").html(class5);
+	}
+})
+
+</script>
+
+
+</body>
+</html>
