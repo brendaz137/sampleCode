@@ -22,7 +22,7 @@
 			type: "GET",
 			dataType: "jsonp",
 			url: "https://aqueous-lake-7169.herokuapp.com/people/kkatongo",
-			success: function(data, textStatus, xhr) {
+			success: function(data) {
 
 				//create variable for JSON response
 				var responseObject = data;
@@ -37,7 +37,7 @@
 				$("#record_for_kerbid").html(record_as_string);
 			}
 		});
-	</script>
-	
+
+	</script>	
 </body>
 </html>

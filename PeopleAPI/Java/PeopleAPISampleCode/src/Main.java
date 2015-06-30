@@ -36,7 +36,7 @@ public class Main {
        
          
        try {   
-    	   		//convert URL string into URL object
+    	   	   // convert URL string into URL object
 	    	   URL url = new URL(urlStringKerbId);
 	    	   
 	    	   // perform GET request to the URL
@@ -46,7 +46,7 @@ public class Main {
 	           BufferedReader in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
 	           String inputLine;
 	           
-	           // read response and append to response string buffer
+	           // read response and append to string buffer
 	           while ((inputLine = in.readLine()) != null) {
 	        	   responseStringBuffer.append(inputLine);
 	           }
@@ -55,7 +55,7 @@ public class Main {
 	           in.close();
 	           
 	           try {
-	        	   // convert response string buffer to string
+	        	   // convert string buffer to string
 	        	   String responseString = responseStringBuffer.toString();
 	        	   
 	        	   // use response string to create JSON object
@@ -82,10 +82,10 @@ public class Main {
 	           // create buffered reader and string to read the response
 	           in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
 	           
-	           // create new response string buffer
+	           // create new string buffer
 	           responseStringBuffer = new StringBuffer();
 	           
-	           // read response and append to response string buffer
+	           // read response and append to string buffer
 	           while ((inputLine = in.readLine()) != null) {
 	        	   responseStringBuffer.append(inputLine);
 	           }
@@ -94,7 +94,7 @@ public class Main {
 	           in.close();
 	           
 	           try {
-	        	   // convert response string buffer to string
+	        	   // convert string buffer to string
 	        	   String responseString = responseStringBuffer.toString();
 	        	   
 	        	   // use response string to create JSON object

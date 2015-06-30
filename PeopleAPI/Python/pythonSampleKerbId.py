@@ -39,6 +39,7 @@ jsonObject = json.loads(jsonResponseString)
 record = jsonObject['item']
 
 print
+print "## VALID API CALL"
 print
 print "RESPONSE CODE: " + str(responseCode)
 print
@@ -70,6 +71,7 @@ except urllib2.HTTPError as errorResponse:
 	jsonObject = json.loads(jsonResponseString)
 
 	print
+	print "## INVALID API CALL"
 	print
 	print "RESPONSE CODE: " + str(responseCode)
 	print
