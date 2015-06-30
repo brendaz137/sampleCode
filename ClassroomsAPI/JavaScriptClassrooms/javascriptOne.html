@@ -15,9 +15,9 @@
 
 
 <!--display aquired information-->
-<h4>"Capacity:"</h3>
+<h3>Capacity:</h3>
 <p id="cap"></p>
-<h4>"URL of first picture:"</h3> 
+<h4>URL of first picture:</h3> 
 <p id="url"></p>
 
 <script type="text/javascript">
@@ -27,10 +27,15 @@ $.ajax({
 	dataType: "jsonp",
 	url: "https://aqueous-lake-7169.herokuapp.com/classrooms/1-115",
 	success: function(output) {
+
+		var responseObject = output;
 		//create variable to store capacity of classroom 1-115
-        var capacity = output.data.capacity;
+
+        var capacity = responseObject['data']['capacity'];
+
         //create variable to store url of first image of classroom 1-115
-        var firstURL = output.data.urls[0];
+        var firstURL = responseObject['data']['urls'][0];
+
         //link variables to html using jquery
         $("#cap").html(capacity);
         $("#url").html(firstURL);
