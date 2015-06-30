@@ -16,7 +16,7 @@
 -->
 
 <!--display aquired information-->
-<h4>"Capacity:"</h3>
+<h4>"Data for first 5 classrooms:"</h3>
 <p id="1"></p>
 <p id="2"></p>
 <p id="3"></p>
@@ -30,12 +30,16 @@ $.ajax({
 	dataType: "jsonp",
 	url: "https://aqueous-lake-7169.herokuapp.com/classrooms",
 	success: function(output) {
+
+		var responseObject = output;
+
 		// store data for first 5 classrooms from response of get request
-        var class1 = JSON.stringify(output.data[0]);
-        var class2 = JSON.stringify(output.data[1]);
-        var class3 = JSON.stringify(output.data[2]);
-        var class4 = JSON.stringify(output.data[3]);
-        var class5 = JSON.stringify(output.data[4]);
+        var class1 = JSON.stringify(responseObject["data"][0]);
+        var class2 = JSON.stringify(responseObject["data"][1]);
+        var class3 = JSON.stringify(responseObject["data"][2]);
+        var class4 = JSON.stringify(responseObject["data"][3]);
+        var class5 = JSON.stringify(responseObject["data"][4]);
+
         //link variables to html using jquery
         $("#1").html(class1);
         $("#2").html(class2);
