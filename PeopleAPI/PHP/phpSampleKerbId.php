@@ -8,15 +8,7 @@
 	*/
 
 	//peform get request and store json response (String)
-	$jsonResponseString = file_get_contents("http://mit-public-dev.cloudhub.io/people/v1/people/kkatongo");
-
-	var_export($http_response_header, true);
-
-	$responseCode = $http_response_header[0];
-
-	print "<h3> RESPONSE CODE: </h3> "; 
-
-	print $responseCode;
+	$jsonResponseString = file_get_contents("http://mit-public-test.cloudhub.io/people/v1/people/kkatongo");
 
 	//parse json response string into JSON object
 	$jsonObject = json_decode($jsonResponseString, true);

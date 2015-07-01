@@ -13,7 +13,7 @@ import json
 '''
 
 #peform get request and store json response (String)
-jsonResponseString = urllib2.urlopen("http://mit-public-dev.cloudhub.io/people/v2/people?offset=1&limit=10").read()
+jsonResponseString = urllib2.urlopen("http://mit-public-test.cloudhub.io/people/v1/people?offset=1&limit=10").read()
 
 #parse json response string into JSON object
 jsonObject = json.loads(jsonResponseString)
