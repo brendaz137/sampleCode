@@ -24,8 +24,8 @@ import org.json.JSONArray;
 public class Main {
     public static void main(String[] args){
 		// URLs
-    	String urlStringKerbId = "http://mit-public-dev.cloudhub.io/people/v1/people/kkatongo"; 
-    	String urlStringOffsetAndLimit = "http://mit-public-dev.cloudhub.io/people/v2/people?offset=1&limit=10";
+    	String urlStringKerbId = "http://mit-public-test.cloudhub.io/people/v1/people/kkatongo"; 
+    	String urlStringOffsetAndLimit = "http://mit-public-test.cloudhub.io/people/v1/people?offset=1&limit=10";
     	
     	// create HttpURLConnection object and other required resources
     	HttpURLConnection urlConnection;

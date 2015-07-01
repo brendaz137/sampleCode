@@ -9,7 +9,7 @@
 	*/
 
 	//peform get request and store json response (String)
-	$jsonResponseString = file_get_contents("http://mit-public-dev.cloudhub.io/people/v2/people?offset=1&limit=10");
+	$jsonResponseString = file_get_contents("http://mit-public-test.cloudhub.io/people/v1/people?offset=1&limit=10");
 
 	//parse json response string into JSON object
 	$jsonObject = json_decode($jsonResponseString, true);

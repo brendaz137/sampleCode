@@ -23,7 +23,7 @@ import json
 '''
 
 #peform get request and store response
-response = urllib2.urlopen("http://mit-public-dev.cloudhub.io/people/v1/people/kkatongo")
+response = urllib2.urlopen("http://mit-public-test.cloudhub.io/people/v1/people/kkatongo")
 
 #get response code
 responseCode = response.getcode()
@@ -56,7 +56,7 @@ print
 
 # try to peform get request and store response
 try: 
-	response = urllib2.urlopen("http://mit-public-dev.cloudhub.io/people/v1/people/puzzleduck")
+	response = urllib2.urlopen("http://mit-public-test.cloudhub.io/people/v1/people/puzzleduck")
 
 #catch HTTPError	
 except urllib2.HTTPError as errorResponse:
